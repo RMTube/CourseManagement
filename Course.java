@@ -39,7 +39,6 @@ public class Course {
 
     //Displays all the variables
     public void Display() {
-        String.format("%s is %d years old.", name, age);
         System.out.println(String.format("Course Name is %s ", this.name));
         System.out.println(String.format("Instructor Name is %s ",this.name));
         System.out.println(String.format("Total Hours requires to Complete the Course is %s ",this.totalHours);
