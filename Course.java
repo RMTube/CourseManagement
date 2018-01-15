@@ -11,7 +11,7 @@ public class Course {
     public Course(String courseName,String instructorName, int totalHours)
     {
         this.name = name;
-        this. instructorName = instructorName;
+        this.instructorName = instructorName;
         this.totalHours = totalHours;
         this.studentName=""
     }
