@@ -39,11 +39,11 @@ public class Course {
 
     //Displays all the variables
     public void Display() {
-        System.out.println(String.format("Course Name is %s ", this.name));
-        System.out.println(String.format("Instructor Name is %s ",this.name));
-        System.out.println(String.format("Total Hours requires to Complete the Course is %s ",this.totalHours);
+        System.out.println(String.format("Course Name is %s ", getName()));
+        System.out.println(String.format("Instructor Name is %s ",getInstructorName()));
+        System.out.println(String.format("Total Hours requires to Complete the Course is %d ",getTotalHours());
         if (!this.studentName.isEmpty()) {
-            System.out.println(String.format("Student Name is %s " ,this.name));
+            System.out.println(String.format("Student Name is %s " ,getStudentName()));
         }
     }
 }
