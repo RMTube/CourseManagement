@@ -1,0 +1,120 @@
+public class Professional extends Course
+{
+    float courseFee;
+    String enrollDate;
+    String roomNo;
+    float dailyHour;
+    float downPayment;
+    boolean started;
+    boolean completed;
+    
+    public Professional(String courseName,String instructorName, float courseFee,float dailyHour, int totalhours)
+    {
+      super(courseName, instructorName, totalhours); //superclass constructor is called
+      this.courseFee=courseFee;
+      this.dailyHour=dailyHour;
+      enrollDate="";
+      roomNo="";
+      downPayment=0;
+      started=false;
+      completed=false;
+    }
+    
+    public String get_enrollDate()
+    {
+      return enrollDate;
+    }
+    
+    public String get_roomNo()
+    {
+      return roomNo;
+    }
+    
+    public float get_downPayment()
+    {
+      return downPayment;
+    }
+    
+    public float get_courseFee()
+    {
+      return courseFee;
+    }
+    
+    public float get_dailHour()
+    {
+      return dailyHour;
+    }
+    
+    public boolean get_started()
+    {
+      return started;
+    }
+    
+    public boolean get_completed()
+    {
+      return completed;
+    }
+    
+    public void new_course_fee(float course_fee)
+    {
+        this.courseFee=course_fee;
+    }
+    
+    public void new_dailyHour(float dailyHour)
+    {
+        this.dailyHour=dailyHour;
+    }
+    
+    public void enrollStudent(String studentname, String enrollDate, float downPayment,String roomNo)
+    {
+     if (started)
+     {
+         System.out.println("The course has already started ");
+         System.out.println("Instructor's Name : " +instructorName);
+         System.out.println("Room number : " +roomNo);
+     }
+     else
+     {
+         super.setStudentName(studentName);   
+         this.enrollDate=enrollDate;
+         this.roomNo=roomNo;
+         this.downPayment=downPayment;
+         started=true;
+         completed=false;
+     }
+    }
+    
+    public void course_completion()
+    {
+      if (completed==true)
+      {
+          System.out.println("The course is completed!congratulation");
+      }
+      else
+      {
+          super.setStudentName("");
+          enrollDate="";
+          downPayment=0;
+          started=false;
+          completed=true;
+        }
+    }
+    
+    public void print()
+    {
+        System.out.println("Course name= " + getName());
+        System.out.println("Instructor's name= "+ instructorName);
+        System.out.println("Course fee= "+ courseFee);
+    }
+    
+    public void display()
+    {
+        super.Display();
+        if (started);
+        {
+            System.out.println("Completion of the course : "+ completed);
+            System.out.println("Date of enrollment : "+ enrollDate);
+            System.out.println("Downpayment : "+ downPayment);
+        }
+    }
+}
