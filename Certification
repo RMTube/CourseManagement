@@ -1,0 +1,99 @@
+public class Certification extends Course
+{
+    int courseFee;
+    String startDate;
+    String examDate;
+    String examCenter;
+    String certificateAwardedBy;
+    String validTill;
+    boolean started;
+    
+    public Certification(String courseName, String instructorName, int totalHours,int courseFee,String certificateAwardedBy, String validTill)
+    {
+        super(courseName, instructorName, totalHours);
+        this.courseFee=courseFee;
+        this.certificateAwardedBy=certificateAwardedBy;
+        this.validTill=validTill;
+        startDate="";
+        examDate="";
+        examCenter="";
+        started=false;
+    }
+    
+    public int get_courseFee()
+    {
+        return courseFee;
+    }
+    
+    public String get_startDate()
+    {
+        return startDate;
+    }
+    
+    public String get_examDate()
+    {
+        return examDate;
+    }
+    
+    public String get_examCenter()
+    {
+        return examCenter;
+    }
+    
+    public String get_certificateAwardedby()
+    {
+        return certificateAwardedBy;
+    }
+    
+    public String get_validTill()
+    {
+        return validTill;
+    }
+    
+    public boolean get_started()
+    {
+        return started;
+    }
+    
+    public void set_courseFee(int newCourseFee)
+    {
+        if (!started)
+        {
+            this.courseFee=newCourseFee;
+        }
+        else
+        {
+           System.out.println(" Fee cannot be changef as the certification course has already started ");
+        }
+    }
+    
+    public void enrollStudent(String setStudentName, String startDate, String examDate, String examCenter)
+    {
+        if(!started)
+        {
+            setStudentName(setStudentName);
+            started=true;
+            
+        }
+        else
+        {
+           System.out.println("The course started on " + startDate);
+           
+        }
+        this.examDate=examDate;
+        this.examCenter=examCenter;
+    }
+    public void display()
+    {
+        super.Display();
+        if(started)
+        {
+            System.out.println("Start date : "+ startDate);
+            System.out.println("Student's name : "+ studentName);
+            System.out.println("Exam date : "+ examDate);
+            System.out.println("Exam center : "+ examCenter);
+            System.out.println("Certificate awarded by : "+ certificateAwardedBy);
+            System.out.println("Certification validity duration : "+validTill);
+        }
+    }
+}
